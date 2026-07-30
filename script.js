@@ -165,7 +165,7 @@ new IntersectionObserver((entries)=>{
 
 },{
 
-    threshold:0.5
+    threshold:0.4
 
 });
 
@@ -222,7 +222,7 @@ if(page3){
     },{
 
 
-        threshold:0.2
+        threshold:0.4
 
 
     });
