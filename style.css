@@ -63,7 +63,7 @@ img{
 /* BISMILLAH */
 
 .bismillah{
-    width:430px;
+    width:100%;
     left:0px;
     top: 10px;
     z-index:2;
@@ -73,7 +73,7 @@ img{
 /* RAIKAN CINTA */
 
 .raikan{
-    width:430px;
+    width:100%;
     left:0px;
     top:10px;
     z-index:2;
@@ -83,7 +83,7 @@ img{
 /* NAMA */
 
 .name{
-    width:430px;
+    width:100%;
     left:0;
     top:-15px;
     z-index:2;
@@ -93,7 +93,7 @@ img{
 /* DATE */
 
 .date{
-    width:430px;
+    width:100%;
     left:0px;
     top:-5px;
     z-index:2;
@@ -103,7 +103,7 @@ img{
 /* BUNGA */
 
 .flower-left{
-    width:430px;
+    width:100%;
     left:0px;
     bottom:10px;
     z-index:1;
@@ -111,7 +111,7 @@ img{
 
 
 .flower-right{
-    width:430px;
+    width:100%;
     right:0px;
     bottom:10px;
     z-index:1;
@@ -121,8 +121,8 @@ img{
 /* PAGE 2 TEXT */
 
 .text2{
-    width:450px;
-    left:-13px;
+    width:104%;
+    left:-3px;
     top:0px;
     z-index:2;
 }
@@ -159,7 +159,7 @@ img{
 /* BUNGA 2*/
 
 .flower2-02-02{
-    width:430px;
+    width:100%;
     left:0px;
     bottom:0px;
     z-index:1;
@@ -219,7 +219,7 @@ img{
 
     left:50%;
 
-    bottom:150px;
+    bottom:200px;
 
     transform:translateX(-50%);
 
