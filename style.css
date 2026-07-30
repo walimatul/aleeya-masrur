@@ -7,7 +7,12 @@
 
 body{
     overflow:hidden;
-    background:#000;
+        background:
+    radial-gradient(
+        circle at top,
+        #f5ead7,
+        #c8aa7d
+    );
     scroll-snap-type:y mandatory;
     display:flex;
     flex-direction:column;
@@ -125,16 +130,19 @@ img{
 
 /* FADE IN SCROLL */
 
-.fadeText {
+.reveal{
+    opacity:0;
+    transform:translateY(-50px);
+    transition:opacity 1.2s ease, transform 1.2s ease;
+}
+.page-3.in-view .delay1{ transition-delay:.5s; }
+.page-3.in-view .delay2{ transition-delay:1s; }
+.page-3.in-view .delay3{ transition-delay:1.5s; }
+.page-3.in-view .delay4{ transition-delay:2s; }
 
+.page-3.in-view .reveal{
     opacity:1;
-
-    transform:translateY(40px);
-
-    transition:
-    opacity 1.2s ease,
-    transform 1.2s ease;
-
+    transform:translateY(0);
 }
 
 
@@ -146,14 +154,6 @@ img{
 
 }
 
-
-.fadeText.show {
-
-    opacity:1;
-
-    transform:translateY(0);
-
-}
 
 
 /* BUNGA 2*/
@@ -192,9 +192,6 @@ img{
 }
 
 
-.date{
-    animation-delay:1.9s;
-}
 
 
 @keyframes fadeUp{
@@ -212,13 +209,17 @@ img{
 }
 
 
+/* =========================
+   OPEN INVITATION GLASS
+========================= */
+
 #openInvitation{
 
     position:absolute;
 
     left:50%;
 
-    bottom:180px;
+    bottom:50px;
 
     transform:translateX(-50%);
 
@@ -230,47 +231,107 @@ img{
 
     border-radius:40px;
 
-    background:#8d6e63;
-
-    color:white;
+    color:rgb(105, 32, 32);
 
     font-size:15px;
 
+    letter-spacing:1px;
+
     cursor:pointer;
+
+
+    /* GLASS EFFECT */
+
+    background:rgba(240,230,210,0.18);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+
+    border:1px solid rgba(255,255,255,0.35);
+
+
+    box-shadow:
+
+    0 8px 25px rgba(0,0,0,0.25),
+
+    inset 0 1px 2px rgba(255,255,255,0.4);
+
 
     z-index:10;
 
-}
+    opacity:0.95;
 
+    overflow:hidden;
 
-#openInvitation{
+    transition:all .3s ease;
+
 
     animation:pulse 2s infinite;
 
 }
 
 
-@keyframes pulse{
+/* GLASS SHINE */
+
+#openInvitation::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.45),
+        transparent
+    );
+
+
+    transform:skewX(-25deg);
+
+    animation:openShine 4s infinite;
+
+}
+
+
+@keyframes openShine{
 
     0%{
-        transform:translateX(-50%) scale(1);
-    }
 
+        left:-120%;
 
-    50%{
-        transform:translateX(-50%) scale(1.05);
     }
 
 
     100%{
-        transform:translateX(-50%) scale(1);
+
+        left:160%;
+
     }
 
 }
 
 
+/* HOVER */
+
+#openInvitation:hover{
+    background:rgba(255,255,255,0.25);
+}
+
+
 /* =========================
-   MUSIC BUTTON
+   MUSIC BUTTON GLASS
 ========================= */
 
 #musicBtn {
@@ -280,35 +341,51 @@ img{
     position:fixed;
 
     right:25px;
+
     bottom:25px;
 
     width:55px;
+
     height:55px;
 
     border-radius:50%;
 
     border:none;
 
-    background:#b8955b;
-
-    color:white;
+    cursor:pointer;
 
     font-size:22px;
 
-    cursor:pointer;
+    color:white;
+
+
+    /* GLASS EFFECT */
+
+    background:rgba(240,230,210,0.18);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+
+    border:1px solid rgba(255,255,255,0.35);
+
+
+    box-shadow:
+
+    0 8px 25px rgba(0,0,0,0.25),
+
+    inset 0 1px 2px rgba(255,255,255,0.4);
+
 
     z-index:9999;
 
 
-    /* faded effect */
-    opacity:0.8;
+    opacity:0.9;
 
 
-    box-shadow:
-    0 5px 20px rgba(0,0,0,0.25);
+    transition:all .3s ease;
 
-
-    transition:opacity 0.3s ease;
 
 }
 
@@ -316,7 +393,11 @@ img{
 
 /* Hover */
 
-#musicBtn:hover {
+#musicBtn:hover{
+
+    transform:scale(1.08);
+
+    background:rgba(255,255,255,0.25);
 
     opacity:1;
 
@@ -367,7 +448,7 @@ img{
 @keyframes musicGlow {
 
 
-    0%,200% {
+    0%,100% {
 
         box-shadow:
         0 5px 20px rgb(235, 232, 230);
@@ -378,7 +459,7 @@ img{
     50% {
 
         box-shadow:
-        0 5px 30px rgba(48, 0, 0, 0.8);
+        0 5px 30px rgba(56, 22, 22, 0.8);
 
     }
 
@@ -541,65 +622,125 @@ img{
    CUSTOM LOCATION BUTTON
 ========================= */
 
-
-.map-button {
+.map-button{
 
     position:absolute;
 
-    bottom:80px;
+    bottom:480px;
 
     left:50%;
 
     transform:translateX(-50%);
 
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
 
     padding:14px 38px;
 
-
-    background:rgba(184,149,91,0.85);
-
-
-    color:white;
-
+    color:#fff;
 
     text-decoration:none;
-
-
-    border-radius:40px;
-
 
     font-size:15px;
 
     letter-spacing:1px;
 
+    border-radius:50px;
 
-    border:1px solid rgba(255,255,255,0.8);
+    /* Glass Effect */
 
+    background:rgba(240,230,210,0.15);
 
-    z-index:100;
+    backdrop-filter:blur(12px);
 
+    -webkit-backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,0.25);
+
+    box-shadow:
+        0 8px 32px rgba(0,0,0,0.18),
+        inset 0 1px 1px rgba(255,255,255,0.25);
 
     opacity:0.95;
 
+    overflow:hidden;
 
-    backdrop-filter:blur(5px);
+    z-index:100;
 
+    transition:all .3s ease;
 
     animation:locationPulse 2.5s ease-in-out infinite;
-
-
-    transition:0.3s;
 
 }
 
 
+/* Glass Shine */
 
+.map-button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.45),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+    animation:glassShine 4s infinite;
+
+}
+
+
+/* Hover */
 
 .map-button:hover{
 
-    opacity:1;
-
     transform:translateX(-50%) scale(1.05);
+
+    background:rgba(255,255,255,0.20);
+
+    border:1px solid rgba(255,255,255,0.4);
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,0.25),
+        inset 0 1px 2px rgba(255,255,255,0.35);
+
+}
+
+
+/* Shine Animation */
+
+@keyframes glassShine{
+
+    0%{
+
+        left:-120%;
+
+    }
+
+    100%{
+
+        left:160%;
+
+    }
 
 }
 
