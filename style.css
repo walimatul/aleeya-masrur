@@ -60,6 +60,71 @@ img{
 }
 
 
+/* =========================
+   GLOBAL DECORATION
+========================= */
+
+.leaf-decoration{
+
+    position:fixed;
+
+    overflow:visible;
+
+    pointer-events:none;
+
+    z-index:900;
+
+    animation:leafSwing 8s ease-in-out infinite;
+
+}
+
+.leaf1{
+    width:180px;
+    top:450px;
+    left:-90px;
+    transform:
+    scaleX(1) rotate(12deg);
+}
+
+.leaf2{
+
+    position:fixed;
+
+    width:160px;
+
+    top:580px;
+
+    right:-50px;
+
+    z-index:950;
+
+}
+
+.leaf3{
+    width:170px;
+    bottom:50px;
+    left:310px;
+    transform:
+    scaleX(-1) rotate(12deg);
+}
+
+@keyframes leafSwing{
+
+    0%,100%{
+
+        rotate:0deg;
+
+    }
+
+
+    50%{
+
+        rotate:3deg;
+
+    }
+
+}
+
 /* BISMILLAH */
 
 .bismillah{
