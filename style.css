@@ -16,24 +16,13 @@ body{
 /* SAIZ PHONE */
 
 .page{
-    width:430px;
-    height:764px;
-    margin:auto;
+    width:100%;
+    max-width:430px;
+    height:100dvh;
+    margin:0 auto;
     position:relative;
     overflow:hidden;
-     scroll-snap-align:start;
-
-}
-
-
-/* BACKGROUND PAGE */
-
-.page{
-    width:430px;
-    height:764px;
-    margin:auto;
-    position:relative;
-    overflow:hidden;
+    scroll-snap-align:start;
 }
 
 
