@@ -170,7 +170,7 @@ img{
 .flower-left{
     width:100%;
     left:0px;
-    bottom:30px;
+    bottom:50px;
     z-index:1;
 }
 
@@ -178,7 +178,7 @@ img{
 .flower-right{
     width:100%;
     right:0px;
-    bottom:30px;
+    bottom:50px;
     z-index:1;
 }
 
