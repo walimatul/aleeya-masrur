@@ -72,7 +72,7 @@ body{
 .page{
     width:430px;
     min-height:764px;
-    margin:auto;
+    margin:0 auto;
     position:relative;
     overflow:hidden;
     scroll-snap-align:start;
