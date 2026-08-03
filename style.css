@@ -164,6 +164,7 @@ img{
 }
 
 .leaf3{
+    display:none;
     width:170px;
     bottom:50px;
     left:310px;
