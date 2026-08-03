@@ -77,7 +77,6 @@ body{
     overflow:hidden;
     scroll-snap-align:start;
     flex-shrink:0;
-    outline:2px solid red;
 }
 
  
